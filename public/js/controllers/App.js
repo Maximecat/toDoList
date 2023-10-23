@@ -8,13 +8,13 @@ class App {
 
     constructor() {
         this.apiService = new ToDoService();
-        this.getToDoDatas();
         this.toDoContainer = document.querySelector('#main')
         this.todo = [];
+        this.getToDoDatas();
     }
 
     async getToDoDatas() {
-        this.data = await this.apiService.getToDoList();
+        this.toDo = await this.apiService.getToDoList();
         this.displayToDo();
     }
 
