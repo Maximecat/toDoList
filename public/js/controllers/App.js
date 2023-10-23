@@ -9,7 +9,7 @@ class App {
     constructor() {
         this.apiService = new ToDoService();
         this.toDoContainer = document.querySelector('#main')
-        this.todo = [];
+        this.toDo = [];
         this.getToDoDatas();
     }
 
@@ -19,7 +19,7 @@ class App {
     }
 
     displayToDo() {
-        for (const toDo of this.todo) {
+        for (const toDo of this.toDo) {
             const toDoFactory = new ToDoFactory(toDo)
             const toDoCard = toDoFactory.createToDoCard();
 
