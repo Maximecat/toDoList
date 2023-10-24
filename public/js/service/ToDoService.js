@@ -11,4 +11,12 @@ export class ToDoService {
                 return data.todos.map(todo => new ToDo(todo))
             });
     }
+
+    async deleteTodoElement(id) {
+        return fetch('https://dummyjson.com/todos/' + id)
+            .then(res => res.json())
+            .then(data => {
+                return new ToDo(data)
+            });
+    }
 }
