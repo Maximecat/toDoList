@@ -2,19 +2,19 @@ import { ToDoFactory } from "../factories/ToDoFactory.js";
 import { ToDoService } from "../service/ToDoService.js";
 
 class App {
-    apiService;
+    toDoService;
     toDoContainer;
     toDo;
 
     constructor() {
-        this.apiService = new ToDoService();
+        this.toDoService = new ToDoService();
         this.toDoContainer = document.querySelector('#main')
         this.toDo = [];
         this.getToDoDatas();
     }
 
     async getToDoDatas() {
-        this.toDo = await this.apiService.getToDoList();
+        this.toDo = await this.toDoService.getToDoList();
         this.displayToDo();
     }
 
