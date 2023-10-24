@@ -28,7 +28,7 @@ header {
     padding-bottom: 50px;
 }
 
-#todo-card {
+.todo-card {
     width: fit-content;
     display: flex;
     flex-direction: row;
@@ -39,12 +39,12 @@ header {
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-#todo-checkbox {
+.todo-checkbox {
     margin-left: 20px;
     margin-right: 20px;
 }
 
-#todo-paragraph {
+.todo-paragraph {
     max-width: 140px;
     text-align: center;
     align-self: center;
@@ -53,7 +53,7 @@ header {
     padding: 10px;
 }
 
-#todo-remove {
+.todo-remove {
     height: 52px;
     display: flex;
     align-items: center;
