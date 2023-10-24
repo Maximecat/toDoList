@@ -17,7 +17,7 @@ export class ToDoFactory {
         paragraphToDo.id = 'todo-paragraph'
         paragraphToDo.innerText = this.todo.todo
 
-        const toDoRemove = document.createElement('span')
+        const toDoRemove = document.createElement('button')
         toDoRemove.id = 'todo-remove'
         toDoRemove.innerText = 'Remove'
 
