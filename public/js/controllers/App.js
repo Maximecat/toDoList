@@ -20,12 +20,11 @@ class App {
     displayToDo() {
         for (const toDo of this.todos) {
             const toDoCard = toDo.createToDoCard();
-            console.log(toDoCard);
-            console.log(toDoCard.querySelector(".todo-remove"));
 
             const todoRemoveButton = toDoCard.querySelector(".todo-remove");
             todoRemoveButton.addEventListener("click", (e) => {
                 console.log("Remove todo : " + toDo.id)
+                this.toDoService.deleteTodoElement(toDo.id)
             });
 
             // Je veut que quand tu clique sur le boutton de remove,
