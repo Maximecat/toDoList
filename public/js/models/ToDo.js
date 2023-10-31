@@ -3,12 +3,16 @@ export class ToDo {
     todo;
     completed;
     userId;
+    isDeleted;
+    deletedOn;
 
     constructor(toDoElement) {
         this.id = toDoElement.id;
         this.todo = toDoElement.todo;
         this.completed = toDoElement.completed;
         this.userId = toDoElement.userId;
+        this.isDeleted = toDoElement.isDeleted;
+        this.deletedOn = new Date(toDoElement.deletedOn)
     }
 
     createToDoCard() {
@@ -24,6 +28,9 @@ export class ToDo {
         const paragraphToDo = document.createElement('p')
         paragraphToDo.classList.add('todo-paragraph')
         paragraphToDo.innerText = this.todo
+        if (this.completed) {
+            paragraphToDo.style.cssText = "text-decoration: line-through;"
+        }
 
         const toDoRemove = document.createElement('button')
         toDoRemove.classList.add('todo-remove')
