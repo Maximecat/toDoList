@@ -13,7 +13,37 @@ export class ToDoService {
     }
 
     async deleteTodoElement(id) {
-        return fetch('https://dummyjson.com/todos/' + id)
+        return fetch('https://dummyjson.com/todos/' + id, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                return new ToDo(data)
+            });
+    }
+
+    async updateTodoElement(id, completed) {
+        return fetch('https://dummyjson.com/todos/' + id, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                completed: completed,
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                return new ToDo(data)
+            });
+    }
+
+    async createTodoElement(todo) {
+        return fetch('https://dummyjson.com/todos/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                todo: todo,
+            })
+        })
             .then(res => res.json())
             .then(data => {
                 return new ToDo(data)
