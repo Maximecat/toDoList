@@ -57,7 +57,7 @@ header {
 }
 
 .todo-card {
-    width: fit-content;
+    width: 302px;
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
@@ -73,12 +73,14 @@ header {
 }
 
 .todo-paragraph {
+    width: 159px;
     max-width: 140px;
     text-align: center;
     align-self: center;
     border-radius: 5px;
     background-color: white;
     padding: 10px;
+    word-wrap: break-word;
 }
 
 .todo-remove {
