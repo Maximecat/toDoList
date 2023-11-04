@@ -21,8 +21,6 @@ class App {
     }
 
     displayToDo() {
-        // this.toDoContainer.innerHTML = ""
-
         for (const toDo of this.todos) {
             const toDoCard = toDo.createToDoCard();
 
@@ -60,9 +58,26 @@ class App {
 
     addTodo() {
         this.todoForm.addEventListener("submit", (e) => {
+
             e.preventDefault();
 
-            console.log(e.srcElement[0].value);
+            let newTodoValue = e.srcElement[0].value
+            console.log(newTodoValue);
+
+            this.toDoService.createTodoElement(newTodoValue)
+                .then(createdTodo => {
+                    console.log(createdTodo);
+
+                    createdTodo.completed = false;
+                    createdTodo.todo = newTodoValue;
+
+                    if (newTodoValue) {
+                        const newTodoAdded = createdTodo.createToDoCard()
+                        this.toDoContainer.appendChild(newTodoAdded)
+                    } else {
+                        console.log("Aucune todo ajouter");
+                    }
+                })
         })
     }
 }
