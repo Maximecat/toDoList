@@ -37,7 +37,7 @@ export class ToDoService {
     }
 
     async createTodoElement(todo) {
-        return fetch('https://dummyjson.com/todos/add', {
+        return fetch('https://dummyjson.com/todos/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
