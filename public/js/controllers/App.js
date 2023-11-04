@@ -75,7 +75,7 @@ class App {
                         const newTodoAdded = createdTodo.createToDoCard()
                         this.toDoContainer.appendChild(newTodoAdded)
                     } else {
-                        console.log("Aucune todo ajouter");
+                        alert("Please write a new todo");
                     }
                 })
         })
